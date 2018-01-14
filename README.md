@@ -8,6 +8,12 @@ The dataset we generated has two classes, plotted as red and blue points. You ca
 
 ## Plot with Hidden Layer size 3
 
-![](3_layer_network.PNG)
+![](3_layer_network.png)
 
+We can see that our neural network was able to find a decision boundary that successfully separates the 2 classes.
 
+## Comparison of different Hidden Layer sizes
+
+![](comparison.png)
+
+We can see that a hidden layer of low dimensionality nicely captures the general trend of our data. Higher dimensionalities are prone to overfitting. They are “memorizing” the data as opposed to fitting the general shape. If we were to evaluate our model on a separate test set, the model with a smaller hidden layer size would likely perform better due to better generalization.
