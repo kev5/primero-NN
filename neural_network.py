@@ -19,8 +19,9 @@ plt.scatter(X[:,0], X[:,1], s=40, c=y, cmap=plt.cm.Spectral)
 clf = sklearn.linear_model.LogisticRegressionCV() 
 clf.fit(X, y) 
  
-# Function to plot a decision boundary 
-def plot_decision_boundary(pred_func): 
+
+def plot_decision_boundary(pred_func):
+    ''' Function to plot a decision boundary '''
     # Set min and max values and give it some padding 
     x_min, x_max = X[:, 0].min() - .5, X[:, 0].max() + .5 
     y_min, y_max = X[:, 1].min() - .5, X[:, 1].max() + .5 
@@ -48,8 +49,9 @@ nn_output_dim = 2        # output layer dimensionality
 epsilon = 0.01           # learning rate for gradient descent 
 reg_lambda = 0.01        # regularization strength 
  
-# Function to evaluate the total loss on the dataset 
+ 
 def calculate_loss(model): 
+    ''' Function to evaluate the total loss on the dataset '''
     W1, b1, W2, b2 = model['W1'], model['b1'], model['W2'], model['b2'] 
     # Forward propagation to calculate our predictions 
     z1 = X.dot(W1) + b1 
@@ -66,8 +68,9 @@ def calculate_loss(model):
     data_loss += reg_lambda/2 * (np.sum(np.square(W1)) + np.sum(np.square(W2))) 
     return 1./num_examples * data_loss 
  
-# Function to predict an output (0 or 1) 
+ 
 def predict(model, x): 
+    ''' Function to predict an output (0 or 1) '''
     W1, b1, W2, b2 = model['W1'], model['b1'], model['W2'], model['b2'] 
     # Forward propagation 
     z1 = x.dot(W1) + b1 
