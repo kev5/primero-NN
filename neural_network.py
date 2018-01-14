@@ -79,20 +79,21 @@ def predict(model, x):
     exp_scores = np.exp(z2) 
     probs = exp_scores / np.sum(exp_scores, axis=1, keepdims=True) 
     return np.argmax(probs, axis=1) 
- 
-# This function learns parameters for the neural network and returns the model. 
-# - nn_hdim: Number of nodes in the hidden layer 
-# - num_passes: Number of passes through the training data for gradient descent 
-# - print_loss: If True, print the loss every 1000 iterations 
+
+   
 def build_model(nn_hdim, num_passes=20000, print_loss=False): 
- 
+    '''
+    This function learns parameters for the neural network and returns the model. 
+     - nn_hdim: Number of nodes in the hidden layer 
+     - num_passes: Number of passes through the training data for gradient descent 
+     - print_loss: If True, print the loss every 1000 iterations
+    '''
     # Initialize the parameters to random values. We need to learn these. 
     np.random.seed(0) 
     W1 = np.random.randn(nn_input_dim, nn_hdim) / np.sqrt(nn_input_dim) 
     b1 = np.zeros((1, nn_hdim)) 
     W2 = np.random.randn(nn_hdim, nn_output_dim) / np.sqrt(nn_hdim) 
     b2 = np.zeros((1, nn_output_dim)) 
- 
-    # This is what we return at the end 
+
     model = {} 
 
