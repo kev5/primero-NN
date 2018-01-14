@@ -6,3 +6,8 @@ The dataset we generated has two classes, plotted as red and blue points. You ca
 
 ![](data.PNG)
 
+## Plot with Hidden Layer size 3
+
+![](3_layer_network.PNG)
+
+
